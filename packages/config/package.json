@@ -1,0 +1,9 @@
+{
+  "name": "@indian-rummy/config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
+}

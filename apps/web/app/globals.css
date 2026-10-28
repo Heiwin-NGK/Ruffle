@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --felt: #0d3320;
+  --felt-light: #14472e;
+  --felt-dark: #091f15;
+  --table-border: #0a2918;
+
+  --gold: #d4af37;
+  --gold-light: #f0cc50;
+  --gold-dark: #a88a1e;
+
+  --card-bg: #faf7f0;
+  --card-shadow: rgba(0,0,0,0.6);
+
+  --red: #c0392b;
+  --black: #1a1a1a;
+
+  --ui-bg: rgba(10, 20, 12, 0.85);
+  --ui-border: rgba(212, 175, 55, 0.3);
+  --ui-text: #e8e0c8;
+  --ui-muted: #8a9e8f;
+
+  --radius: 8px;
+  --card-radius: 10px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--felt-dark);
+  color: var(--ui-text);
+  height: 100%;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#__next, main {
+  height: 100%;
+}
+
+/* Felt table texture */
+.table-felt {
+  background-color: var(--felt);
+  background-image:
+    radial-gradient(ellipse at 50% 50%, rgba(20, 71, 46, 0.6) 0%, transparent 70%);
+  background-size: cover;
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: var(--ui-bg);
+  border: 1px solid var(--ui-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius);
+}
+
+/* Gold glow button */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+  color: #1a1200;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 16px rgba(212,175,55,0.35);
+  letter-spacing: 0.04em;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(212,175,55,0.6);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--ui-border);
+  color: var(--ui-text);
+  font-family: 'Outfit', sans-serif;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* Scroll override for card hand on small screens */
+.hand-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.hand-scroll::-webkit-scrollbar { display: none; }
